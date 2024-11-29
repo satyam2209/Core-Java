@@ -1,0 +1,2339 @@
+Java
+-----
+java is a high-level programming language and object oriented owned by oracle.
+
+Features of java
+-----------------
+Object-oriented
+Platform Independent
+Simple
+Secure
+Architecture Neutral
+Portable
+Robust
+Multithreaded
+interpreted
+High Performance
+Distributed
+Dynamic
+
+Java Platforms/ Editions
+-------------------------
+Java SE (java Standard Edition)
+Java EE (java Enterprise Edition)
+Java ME (java Micro Edition)
+JavaFX
+
+1. Java SE (Java Standard Edition)
+---------------------------------
+Purpose => The core platform for general-purpose programming.
+
+Use Cases => Desktop applications, standalone applications, and general Java development.
+
+Key Features => Includes core libraries (like java.lang, java.util), utilities, networking, I/O, and basic GUI frameworks like Swing and AWT.
+
+APIs => Fundamental libraries for data structures, networking, and graphical user interfaces.
+
+2. Java EE (Java Enterprise Edition)
+-------------------------------------
+Purpose => Used for building large-scale, distributed, and multi-tiered applications.
+
+Use Cases => Web applications, enterprise-level applications, and services.
+
+Key Features => Built on top of Java SE and provides additional libraries and specifications for enterprise functionalities like Servlets, 
+                JSP, JPA, and EJB.
+
+APIs => Includes APIs for web services (JAX-RS, JAX-WS), messaging (JMS), and persistence (JPA).
+
+3. Java ME (Java Micro Edition)
+--------------------------------
+Purpose => Optimized for devices with limited resources like mobile phones, embedded devices, and IoT applications.
+
+Use Cases => Applications for resource-constrained devices, small devices, and embedded systems.
+
+Key Features => Smaller footprint with libraries and tools tailored for mobile devices and embedded systems.
+
+APIs => Provides lightweight APIs suited for constrained environments, focusing on lightweight user interfaces and networking.
+
+4. JavaFX
+------------
+Purpose => A modern toolkit for building rich graphical user interfaces.
+
+Use Cases => Desktop applications with advanced GUI, media-rich applications, and web applications (in some cases).
+
+Key Features => Supports features like 2D/3D graphics, animations, media playback, and CSS styling.
+
+APIs => Separate from Java SE, with libraries for creating modern and interactive UIs, including components like controls, layout managers, 
+        and multimedia capabilities.
+
+
+---------NOTE FOR BACKEND DEVELOPMENT IN JAVA------------
+
+-> For learning backend development in Java and working with libraries like Spring Boot, Java SE (Java Standard Edition) is the edition 
+   you'll want to start with. 
+   Java SE provides the core foundation and essential libraries required for building any Java application, including backend services. 
+   Here’s why Java SE is the right choice:
+
+Why Java SE?
+------------
+Core Java Knowledge => Java SE includes fundamental libraries like data structures, I/O, networking, and multithreading, which are essential for 
+                       backend development.
+
+Spring Boot Dependency => Spring Boot builds on Java SE, so understanding Java SE is crucial before diving into Spring Boot.
+
+Basic Skills => You'll learn the core Java language features, such as exception handling, JDBC for database access, and basic network programming, 
+                all of which are relevant for backend development.
+
+Using Java SE with Spring Boot
+---------------------------------
+-> Spring Boot is part of the Spring Framework, which is commonly used for backend development and builds on Java SE’s capabilities.
+
+-> Spring Boot simplifies the setup and development of Java backend applications, making it easier to work with web servers, databases, and RESTful APIs.
+
+What About Java EE?
+--------------------
+-> While Java EE also offers many features useful for backend development (like Servlets, JSP, and JPA), it’s not necessary to learn it specifically for 
+   Spring Boot. Spring Boot is an alternative to Java EE that often simplifies the development process by providing easier integration and configuration 
+   for backend services.
+
+-> So, start with Java SE to establish a strong foundation, then you can directly dive into Spring Boot to learn modern backend development in Java.
+
+
+First program:
+---------------
+class first{
+
+    public static void main(String args[])
+    {
+        System.out.println("Hello World!!! welcome to the java class");
+    }
+}
+
+explanation:
+-------------
+=> In Java, class is the basic unit of encapsulation which contains all the code.
+=> A class is defined by the keyword 'class' followed by the class name.i.e as
+
+public class Sample{
+=> The keyword public is access specifier. Java Access Specifiers (also known as visibility Specifiers) regulate access to classes, fields and
+   methods in java.
+
+There are 4 types of access specifiers.
+
+=> public - can be accessed outside of the class in which it is declared.
+
+=> private - can be accessed only within the class in which it is declared.
+
+=> protected - can be accessed within the class, and in the subclasses of it.
+
+=> default - if no modifier is specified, it is considered to have default access. i.e
+
+public static void main(String[] args){
+----------------------------------------
+=> The keyword 'public' represents that the main method could be called outside of the class.
+
+=> The keyword 'static' helps the main method to be called before an object of the class is created.
+
+=> The keyword 'void' indicates that the method return nothing.
+
+=> We may also change the return type of the main method if required.
+
+=> The string array 'args' is used to pass any command line arguments while running the program.
+
+Important Concepts:=>
+------------------
+It is not mandatory to keep the file name and the class name the same in Java, but it is generally recommended for maintaining professionalism 
+and avoiding confusion. When you compile a Java file using the command javac file_name.java, the compiler generates a .class file with the 
+name of the class. To run the program, you need to use the class name, not the file name.
+
+For example, if the class name is Sample, you would run the program with the command java Sample. Similarly, if the class name is First, 
+you would run it with java First.
+
+To avoid confusion and maintain consistency, it is recommended to name the file the same as the class, especially for public classes.
+
+Java Virtual Machine
+---------------------
+=> JVM(Java Virtual Machine): run-time engine to run java applications.
+
+=> It calls the main method present in java code.
+
+=> JVM is a part of JRE(Java Runtime Environment).
+
+=> Java applications are called WORA(Write Once Run Anywhere). This means a programmer can develop java code on one system and can expect it
+to run on any other java-enabled system without any adjustment. This is all possible because of JVM.
+
+=> When we compile a .java file, .class files(contains byte-code) with the same class names present in .java files are generated by the Java 
+compiler. This .class file goes into various steps when we run these steps together describe the whole JVM.
+
+Important Concepts:=>
+-------------------
+if there is file named abc.java, and in this java file there is three classes C1, C2, C3 and when we compile this java file then the .class file is
+made by the name of those class who has main method. (public static main void [String args[]) 
+
+
+JVM:
+-----
+
+    JVM Language
+    classes        ---->   class Loader
+                               |
+                               |
+                               |
+                               V
+                  JVM Memory
+                 ------------
+              Method     Heap    JVM Language    PC             Native Methods
+              Area               Stacks          Registers      stacks
+                        |
+                        |
+                        |
+                        V
+             Execution          Native Methods           Native Methods
+             Engine    <---->   Interface       <----->  Libraries
+
+
+Class Loader Subsystem:
+------------------------
+
+It is mainly responsible for three activities.
+
+=> Loading : The class loader reads the ".class" file, generate the corresponding binary data and save it in the method area.
+
+=> Linking: Performs verification, preparation, and (optionally) resolution.
+
+=> Initialization: all static variables are assigned with their values defined in the code and static block(if any). This is
+executed from top to bottom in a class and from parent to child in the class hierarchy.
+
+
+Tokens
+-------
+-> Token is the smallest elements of a program that is identified by a compiler.
+-> Every java statement and expressions are created using tokens.
+
+Types of tokens
+----------------
+1. Keyword
+2. Identifier
+3. Operator
+4. Separator
+5. Literal
+
+Keywords
+---------
+=> Java has a set of keywords that are reserved words that cannot be used as variables, methods, classes, or any other identifiers.
+
+=> Identifiers - 
+   -> In programming languages, identifiers are used to identification purposes. In Java, an identifier can be a class name, method name,
+      variable name, or label.
+
+=> Rules for defining Java Identifiers
+   -> There are certain rules for defining a valid java identifier. These rules must be followed, otherwise we get compile-time error.
+
+1. The only allowed characters for identifiers are all alphanumeric characters([A-Z],[a-z],[0-9]), '$'(dollar sign) and '_'(underscore).
+  for example "abc@" is not valid java identifier as it contain '@'special character.
+
+2. Identifiers should not start with digits([0-9]). For example "123abc" is not a valid java identifier.
+
+3. Java identifiers are case-sensitive.
+
+4. There is no limit on the length of the identifier but it is advisable to use an optimum length pf 4-15 letters only.
+
+5. Reserved words can not used as an identifier. For example "int while = 20;" is an invalid statement as while is a reserved word.
+  There are 53 reserved words in java
+
+
+Data Types:
+------------
+=> Data types are divided into two groups:
+  -> Primitive data types - include byte, short, int, long, float, double, boolean and char
+  -> Non-primitive data types- such as String, Arrays and Classes
+
+
+Data Type     Size      Description
+-> byte       1 byte    Stores whole numbers from -128 to 127
+-> short      2 bytes   Stores whole numbers from -32,768 to 32,767
+-> int        4 bytes   Stores whole numbers from -2,147,483,648 to 2,147,483,647
+-> long       8 bytes   Stores whole numbers from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+-> float      4 bytes   Stores fractional numbers. Sufficient for storing 6 to 7 decimal digits
+-> double     8 bytes   Stores fractional numbers. Sufficient for storing 15 decimal digits
+-> boolean    1 bit     Stores true or false values
+-> char       2 bytes   Stores a single character/letter or ASCII values
+
+
+Type Casting
+-------------
+Type casting is a method or process that converts a data type into another data type in both ways manually and 
+automatically. The automatic conversion is done by the compiler and manual conversion performed by the programmer.
+
+                          Narrowing Type Casting
+            -------------------------------------------->
+           double -> float -> long -> int -> short -> byte
+           <----------------------------------------------
+                       Widening Type Casting
+
+
+Types of Type casting:
+-----------------------
+There are two types of type casting:
+   -> Widening Type Casting
+   -> Narrowing Type Casting
+
+=> Widening Type Casting: Converting a lower data type into a higher one is called widening type casting. It is also known
+as implicit conersion or casting down. It is done automatically. It is safe because there is no chance to lose data.
+
+=> Narrowing Type Casting: Converting a higher data type into a lower one is called narrowing type casting. It is also
+known as explicit conversion or casting up. It is done manually by the programmer. if we do not perform casting then 
+the compiler reports a compile-time error.
+
+Operators:
+-----------
+Operators are used to perform operations on variables and values.
+
+=> Java divides the operators into the following groups:
+
+-> Arithmetic operators: + , - , / , % , ++ , --
+
+-> Assignment operators: = , += , -= , /= , %= , &=
+
+-> Comparison operators: == , != , > , < , >= , <=
+
+-> Logical operators: && , || , !
+
+-> Bitwise operators: & , ^ , |    
+
+
+Operators and Precedence
+--------------------------
+Precedence	Operator Category	Operators
+1	        Postfix	                expr++, expr--
+2	        Unary	                ++expr, --expr, +, -, !, ~
+3	        Multiplicative	        *, /, %
+4	        Additive	        +, -
+5	        Shift	                <<, >>, >>>
+6	        Relational	        <, <=, >, >=, instanceof
+7	        Equality	        ==, !=
+8	        Bitwise AND	        &
+9	        Bitwise XOR	        ^
+10	        Bitwise OR	        `
+11	        Logical AND	        &&
+12	        Logical OR	        `
+13	        Ternary	                ?:
+14	        Assignment	        =, +=, -=, *=, /=, %=, &=, `   
+
+
+OOPs Language:
+---------------
+=> Java supports the following fundamental concepts-
+
+ -> Polymorphism
+ -> Inheritance
+ -> Encapsulation
+ -> Abstraction
+ -> Classes
+ -> Objects
+ -> Instance
+ -> Method
+
+
+CLASS
+-------
+-> A class is a blueprint for the object. Before we create an object, we first need to define the class.
+
+-> We can think of the class as a sketch (prototype) of a house. It contains all the details about the floors, doors, windows, etc. 
+   Based on these descriptions we build the house. House is the object.
+
+-> Since many houses can be made from the same description, we can create many objects from a class.
+
+OBJECTS
+--------
+-> An object is called an instance of a class.
+   Example: suppose Bicycle is a class then MountainBicycle, SportsBicycle, TouringBicycle, etc can be considered as 
+            objects of the class.
+
+-> When an object of a class is created, the class is said to be instantiated. All the instances share the attributes
+ and the behavior of the class. But the values of those attributes, i.e the state are unique for each object. A single
+class may have any number of instances.
+
+ Example:  Class Dog
+
+                   |-------------------------|
+           Dog1 -> |  State/Attributes       |  <- Dog3
+                   |  ----------------       |
+                   |    Breed, Age, Color    |
+           Dog2 -> |                         |
+                   |   Behaviors             |  <- Dog4
+                   |   ----------            |
+                   |  Bark, Sleep, Eat       |
+                   | ------------------------|
+
+
+=> Initializing an object using new
+   -> The new operator instantiates a class by allocating memory for a new object and returning a reference to that memory.
+   -> The new operator also invokes the class constructor. (not just allocating memory but also automatically calls the constructor.
+
+Example: public class class3 {
+    int x = 10;
+    String ch = "Wscube";
+    
+    void add() {
+        System.out.println("Inside a function add");
+    }
+
+    public static void main(String args[]) {
+        System.out.println("Hello!! Java class example");
+        
+        // Create an instance of class3 to call the non-static method add()
+        class3 obj1 = new class3(); 
+        obj1.add();  // Call the non-static method using the object
+        System.out.println(obj1.x);
+        System.out.println(obj1.ch);
+    }
+}
+
+
+Multiple Classes In Different Files
+------------------------------------
+In Java, multiple classes in different files means that each class is written in its own separate file. This keeps the code organized and easier 
+to manage. Each file contains one class, and these classes can interact with each other, even if they are in different files. This approach 
+makes the program modular and helps with reusability and organization.
+
+
+Multiple Classes in the Same File
+----------------------------------
+In Java, you can have multiple classes in the same file, but there are some rules:
+
+-> One Public Class: Only one class in the file can be public. The file name must match this public class. For example, if you have public class Dog, 
+   the file name must be Dog.java.
+
+-> Other Classes Are Non-Public: Other classes in the file cannot be public, but they can still be used within the file. These classes are usually 
+   considered helper or inner classes.
+
+-> Class Interaction: All classes in the same file can interact with each other, just like they do when they are in different files. You can create 
+   objects of one class inside another class.
+
+Note:-  The main class is also known as Driver Programme.
+
+
+Method
+-------
+-> A method is a block of code or collection of statements or a set of code grouped together to perform a certain task or operation.
+
+-> It is used to achieve the reusability of code.
+
+-> It also provides the easy modification and readability of code, just by adding or removing a chunk of code. The method is executed 
+   only when we call or invoke it.
+
+Method Declaration
+
+Access     Return  Method   Parameter
+Specifier  Type    Namen     List
+  ^         ^       ^         ^
+  |         |       |         |
+public     int     sum  (int a, int b)     => Method Header
+{
+  // method body Method Signature
+}
+
+
+Access Specifier
+-----------------
+-> Access Specifier or modifier is the access type of method. It specifies the visibility of the method. 
+   Java provides four types of access specifier:
+
+ -> Public: The method is accessible by all classes when we use public specifier in our application.
+
+ -> Private: When We use a private access specifier, the method is accessible only in the classes in
+    which it is defined.
+ 
+ -> Protected: When we use protected access specifier, the method is accessible within the same package
+    or subclasses in a different package.
+
+ -> Default: When we do not use any access specifier in the method declaration, 
+    then it is accessible only within its own package. 
+    This means that:
+    1. Classes, methods, or variables with default access can be accessed by other classes in the same package.
+    2. They cannot be accessed by classes from outside the package, even if those classes are subclasses.
+
+Key Terms
+----------
+-> Void means empty.
+
+-> The void keyword allows us to create methods which do not return a value.
+
+-> Information can be passed to methods as parameter. Parameters act as variables inside the method.
+
+-> Parameters are specified after the method name, inside the parentheses. You can add as many parameters
+   as you want, just separate them with a comma.
+
+Static
+--------
+-> The static keyword is used to construct methods that will exist regardless of whether or not any instances
+   of the class are generated. Any method that uses the static keyword is referred to as a static method.
+
+-> Features of static method.
+   . A static method in java is a method that is a part of a class rather than an instance of that class.
+
+   . Every instance of a class has access to the method.
+
+   . Static methods have access to class variables (static variables) without using the class's object.
+ 
+   . Only static data may be accessed by a static method. It is unable to access data that is static(instance variables).
+
+Note:- In both static and non-static methods, static method can be accessed directly.
+
+
+Difference b/w static vs non-static:
+-------------------------------------
+
+Instance Methods/ Non-static methods:
+-> It requires an object of the class.
+-> It can access all attributes of a class.
+-> The methods can be accessed only using object reference.
+-> Syntax: Objref.methodname()
+-> It's an example of pass-by-value programming.
+
+Static Methods:
+-> It does not require an object of the class.
+-> It can access only the static attriute of a class.
+-> The method is only accessed by class name.
+-> Syntax: className.methodname()
+-> It is an example of pass-by-reference programming.
+
+Method Overloading
+-------------------
+-> When a class has two or more methods by the same name but different parameters, it is known as Method Overloading.
+
+Examples: int myMethod(int x)
+          
+          float myMethod(float x)
+
+          double myMethod(double x, double y)
+
+
+this keyword
+-------------
+-> In java, this keyword is used to refer to the current object inside a method or a constructor.
+
+
+    this   ----->    state/behaviour
+
+   reference            object
+   variable
+
+Usage of java this keyword:-
+-----------------------------
+-> this can be used to refer current class instance variable.
+
+-> this can be used to invoke current class method(implicitly)
+
+-> this() can be used to invoke current class constructor.
+
+-> this can be passed as an argument in the method call.
+
+-> this can be passed as argument in the constructor call.
+
+-> this can be used to return the current class instance from the method.
+
+
+Variable Scope:
+----------------
+-> A variable can be declared and defined inside a class, method, or block.
+
+-> It defined the scope of the variable i.e the visibility or accessibility of a variable.
+
+-> Variable declared inside a block or method are not visible to outside.
+
+key points:
+   -> We can declare variables anywhere in the program but it has limited scope.
+
+   -> A variable can be parameter of a method or constructor.
+
+   -> A variable can be defined and declared inside the body of a method and constructor.
+
+   -> It can also be defined inside blocks and loops.
+
+   -> variable declared inside main() function cannot be accessed outside the main() function.
+
+
+Variable Scope:
+----------------
+
+ Variable Type              Scope                          Lifetime
+
+1. Instance Variable   throughout the class except      until the object is avaiable
+                        in static methods                in the memory
+
+2. Class Variable      throughout the class             until the end of the program
+
+3. Local Variable      within the block in which        until the control leaves the block 
+                        it is declared                   in which it is declared
+
+
+Class data member scope:
+-------------------------
+
+ Access Modifier    Package   Subclass   Word
+1. Public            Yes       Yes        Yes
+
+2. Protected         Yes       Yes        No
+
+3. Private            No       No         No
+
+4. Default           Yes       No         No
+
+
+Decision Making:
+-----------------
+### if =>
+  -> if statement is the most simple decision-making statement.
+
+  -> It is used to decide whether a certain statement or block of statements will be executed or not
+     i.e if a certain condition is true then a block of statement is executed otherwise not.
+
+### if - else =>
+  -> The if statement alone tells us that if a condition is true it will execute a block of statements and if the condition is false it won't.
+
+  -> If we want to do something else if the condition is false.
+
+  -> Here comes the else statement. We can use the else statement with the if statement to execute a block of code when the condition is false.
+
+### if-else-if ladder =>
+   -> Java if-else-if ladder is used to decide among multiple options.
+
+   -> The if statements are executed from the top down.
+
+   -> As soon as one of the conditions controlling the if is true, the statement associated with that if is executed, 
+      and the rest of the ladder is bypassed.
+
+   -> If none of the conditions is true, then the final else statement will be executed.
+
+Switch Statement
+-----------------
+-> Use the switch statement to select one of many code blocks to be executed.
+
+-> The switch statement is a multi-way branch statement.
+
+-> The java switch statement executes one statement from multiple conditions. It is like an if-else-if ladder statement.
+
+-> It provides an easy way to dispatch execution to different parts of code based on the value of the expression.
+
+Ternary Operator
+-----------------
+-> The conditional operator is also known as the ternary operator.
+
+-> This operator consists of three operands and is used to evaluate Boolean expressions.
+
+-> The goal of the operator is to decide, which value should be assigned to the variable.
+
+-> Syntax: variable x = (expression) ? value if true : value if false
+
+-> The ternary operator can be used to replace certain types of if...else statements.
+
+Loop Controls
+--------------
+### While Loop:
+  -> Java while loop is a control flow statement that allows code to be executed repeatedly based on a given Boolean condition.
+
+  -> The while loop can be thought of as a repeating if statement.
+ 
+  -> While loop in java comes into use when we need to repeatedly execute a block of statements.
+
+  -> The while loop is considered as a repeating if statement.
+
+  -> If the number of iterations is not fixed, it is recommended to use the while loop.
+
+
+### do-while Loop:
+  -> Java do-while loop is called an exit control loop.
+
+  -> The do-while check the condition at the end of loop body.
+
+  -> The java do-while loop is executed at least once because condition is checked after loop body.
+   
+### for Loop:
+  -> Java for loop is used to run a block of code for a certain number of times. The syntax of for loop is:
+    for(initialExpression; testExpression; updateExpression){
+       // body of the loop
+    }F
+
+  -> The initialExpression initializes and/or declares variables and executes only once.
+
+  -> The condition is evaluated. If the condition is true, the body of the for loop is executed.
+
+  -> The updateExpression updates the value of initialExpression.
+
+  -> The condition is evaluated again. The process continues until the condition is false.
+
+### break and continue:
+  -> The break statement can also be used to jump out of a loop.
+
+  -> The break statement in java terminates the loop immediately, and the control of the program
+     moves to the next statements following the loop.
+
+  -> The continue statement skips the current iteration of a loop(for, while, do...while, etc).
+
+  -> After the continue statement, the program moves to the end of the loop.
+
+  -> And, test expression is evaluated (update statement is evaluated in case of the for loop).
+
+
+Recursion
+----------
+-> Recursion in java is a process in which a method calls itself continuously.
+
+-> A method in java that calls itself is called recursive method.
+
+-> This technique provides a way to break complicated problems down into simple problems which are easier to solve.
+
+Note: Recursion ek aisa technique hai jisme ek function apne aapko dubara call karta hai. Matlab, function ke andar wohi function dobara call ho jata hai. 
+      Ye tab tak hota rehta hai jab tak koi specific condition puri nahi ho jati, jo "base case" kehlati hai. Jab base case fulfill ho jati hai, tab 
+      function apne aapko dobara call karna band kar deta hai aur result return karne lagta hai.
+
+For example, factorial nikalne ke liye recursion use ho sakta hai. Factorial ka matlab hai kisi number ka multiplication uske chhote numbers se, jaise:
+             factorial(5) = 5 * 4 * 3 * 2 * 1
+
+             Isko recursion se aise likh sakte hain:
+   
+     Example: int factorial(int n) {
+              if (n == 1) { // base case
+                return 1;
+              } else {
+                 return n * factorial(n - 1); // recursive call
+              }
+             }
+
+
+
+Example: 
+    public class Recursion1 {
+    public int fact(int n){
+        int f= 1;
+        if (n==1){
+            return 1;
+        }
+        else
+        {
+            f = n*fact(n-1);
+        }
+        return f;
+    }
+
+    public static void main(String args[]){
+       Recursion1 f1 = new Recursion1();
+       int m;
+       m=f1.fact(5);
+       System.out.println("The factorial is" +m);
+    }
+}
+
+
+Variable Arguments
+--------------------
+-> Varargs is a short name for variable arguments.
+
+-> An argument of a method can accept arbitrary number of values.
+
+-> This argument that can accept variable number of values is called varargs.
+
+-> The syntax for implementing varargs is as follows:
+      
+            accessModifier methodName(datatype...arg){
+                // method body
+            }
+
+-> A method that takes variable number of arguments is called a variable-arity method, or simply a varargs method.
+
+
+Command-Line Arguments
+------------------------
+-> The java command-line argument is an argument i.e passed at the time of running the java program.
+
+-> The arguments passed from the console can be received in the java program and it can be used as an input.
+
+Things to remember:
+  -> While defining method signature, always keep varargs at last.
+
+  -> A method can have only one varargs parameter.
+
+
+What is Constructor?
+--------------------
+-> A constructor in java is a special method that is used to initialize objects.
+
+-> The constructor is called when an object of a class is created.
+
+-> It can be used to set initial values for object attributes.
+
+
+     JVM --- call----Default(by java)
+                          |
+                          |
+                          |--------- Constructors in Java
+                                              |
+                                              |
+                                              |
+               No argument(Explicit) -------------------- Parametric(Explicit)
+                        |                                         |
+                        |                                         |
+                        |                                         |
+                       call -> Program{}                        call -> Program { class 0 = new class(1, "name")}
+
+
+
+Difference Between constructor and method in java
+---------------------------------------------------
+Constructor :-
+1. A constructor is used to initialize the state of an object.
+
+2. A constructor must not have a return type.
+
+3. The constructor is invoked Implicitly.
+
+4. The java compiler provides a default constructor if you don't have any constructor in a class.
+
+5. The constructor name must be same as the class name.
+
+Method:-
+1. A method is used to expose the behavior of an object.
+
+2. A method must have a return type.
+
+3. The method is invoked explicitly.
+
+4. The method is not provided by the compiler in any case.
+
+5. The method name may or may not be same as class name.
+
+Rules:
+-------
+-> Constructor(s) of a class must have the same name as the class name in which it resides.
+
+-> A constructor in java can not be abstract, final, or Synchronized.
+
+-> Access modifiers can be used in constructor declaration to control its access
+   i.e which other class can call the constructor.
+
+Types of Constructor:
+----------------------
+In java, constructor can be divided into 3 types:
+
+-> No-Argument Constructor/Default
+
+-> Parameterized Constructor
+
+
+Access Modifier:
+----------------
+The access modifiers in java specifies the accessibility or scope of field, method, constructor, or class.
+
+There are four types of java access modifiers:
+
+-> Private : The access level of a private modifier is only within the class. It cannot be accessed from 
+             outside the class.
+
+-> Default: The access level of a default modifier is only within the package. It cannot be accessed from
+            outside the package. If you do not specify any access level, it will be default.
+
+-> Protected: The access level of a protected modifier is within the package and outside the package through
+              child class.
+
+-> Public: The access level of a public modifier is everywhere.
+
+
+              ^       
+More          |   Access         within    within    Outside package      outside
+Restrictive   |   Modifier        class    package   by subclass only     package
+              |
+              |1. Private         Yes        No           No                  No
+              |
+              |2. Default         Yes        Yes          No                  No
+              |
+              |3. Protected       Yes        Yes          Yes                 No
+              |
+              |4. Public          Yes        Yes          Yes                 Yes
+Less          |
+Restrictive   |
+
+
+Non-Access Modifier:
+--------------------
+For classes, you can use either final or abstract:
+
+-> Final: The class cannot be inherited ny other classes.
+
+-> Abstract: The class cannot be used to create objects. To access an abstract class,
+             it must be inherited from another class.
+
+
+Strings:
+--------
+-> Strings are used for storing text.
+
+-> A String variable contains a collection of characters surrounded by double quotes.
+
+-> For example, "hello" is a string containing a sequence of characters 'h', 'e', 'l', 'l', 'o'.
+
+-> We use double quotes to represent a string in java.
+
+String Methods:
+---------------
+1. str.length();  // return the length of string str
+
+2. str1.concat(str2);  // concate both the string str1 and str1
+
+3. str.charAt();   // return character that is on index of given number
+
+4. str.contains();  // return boolean whether the given string contains or not
+
+5. str.contentEquals(); // return boolean whether the string euqal or not
+
+6. str.indexOf();  //return index of character if not present then return -1
+
+7. str.isEmpty(); // return boolean whether the string is empty or not
+
+8. str.toLowerCase(); // return a lowercase of the string given
+
+9. str.toUpperCase(); // return the uppercase of the string given
+
+10. str3.trim();  // trim the given string
+
+
+Math class:
+------------
+Java Math class provides several methods to work on math calculations like min(), max(), avg(), sin(), cos(), tan(), round(), ceil(), floor(), abs() etc.
+
+Types :
+-----
+-> Basic Math methods
+-> Logarithmic methods
+-> Trigonometric methods
+-> Hyperbolic methods
+-> Angular methods
+
+Example:
+-------
+-> abs(a): Returns the absolute value of a.
+
+-> ceil(a): Returns the smallest whole number greater than a.
+
+-> floor(a): Returns the largest whole number less than a.
+
+-> max(a, b): Returns the larger of a and b.
+
+-> min(a, b): Returns the smaller of a and b.
+
+-> pow(a, b): Returns the number a raised to power b.
+
+-> random(): Generates a random number less than or equal to 0.0 and less than 1.0
+
+-> sqrt(a): Returns the square root of a.
+
+
+Java Booleans:
+--------------
+-> A boolean type is declared with the boolean keyword and can only take the value true or false.
+
+-> The boolean keyword is a primitive data type. It specifies 1-bit of information and its "size"
+   can not be defined precisely.
+
+-> A boolean expression is a java expression that returns a Boolean value: true or false.
+
+
+Arrays:
+-------
+-> An array is a container object that holds a fixed number of values of a single type.
+
+-> The length of an array is established when the array is created.
+
+         first Index
+          ^
+          |
+Example:  0 1 2 3 4 5   --> Index/Indices
+          S A T Y A M   --> Elements
+                  |
+                Element at index 4
+
+     <---------------- Array length is 6 ----------->
+
+
+There are three main features of an array:
+-> Dynamic allocation:- 
+   In arrays, the memory is created dynamically, which reduces the amount of storage required for the code.
+
+-> Elements stored under a single name: 
+   All the elements are stored under one name. This name is used any time we use an array.
+
+-> occupies contiguous location:
+   The elements in the arrays are stored at adjacent positions. This makes it easy for the user to find the locations
+   of its elements.
+
+
+Java User Input:
+---------------
+-> The Scanner class is used to get user input, and it is found in the java.util package.
+
+-> To use the Scanner class, create an object of the class and use any of the available methods
+   found in the Scanner class documentation.
+
+-> Scanner myObj = new Scanner(System.in);
+
+     -> Scanner: A Java class for reading input.
+     -> myObj: The variable name for the Scanner object.
+     -> new Scanner(System.in): is used to create a new instance (or object) of the Scanner class in Java to read from the keyboard.
+     -> System.in: Represents standard input (the keyboard).
+   
+   int a = myObj.nextInt();
+
+User Input Methods:
+------------------
+
+    Method             Description
+1.  nextBoolean()      Reads a boolean value from the user
+
+2.  nextByte()         Reads a byte value from the user
+
+3.  nextDouble()       Reads a double value from the user
+
+4.  nextFloat()        Reads a float value from the user
+
+5.  nextInt()          Reads a int value from the user
+
+6.  nextLine()         Reads a String value from the user
+
+7.  nextLong()         Reads a long value from the user
+
+8.  nextShort()        Reads a short value from the user
+
+9.  next()             splits the line up into individual words, returning individual text Strings one at a time
+
+
+Multidimensional array:
+----------------------
+-> A multidimensional array is an array of arrays. Each element of a multidimensional array is an array itself.
+
+-> Below is an example of 2-dimensional array.
+
+-> To create a two-dimensional array, add each array within its own set of curly braces.
+
+ Example: int a[][] = {{1, 2, 3, 4}, {5, 6, 7, 8}}
+
+
+What is Methods?
+---------------
+-> Methods are used to break and divide a huge code into small chunks so that the code becomes more understandable and 
+   thus reduces the complexity of the code.
+
+-> The purpose of passing an array to a function is to transfer a large amount of data between methods.
+
+
+Inheritance:
+------------
+-> Inheritance is an important pillar of OOP(Object-Oriented Programming). It is the mechanism in java by which one class is allowed to inherit the
+   features(fields and methods) of another class.
+
+-> The new class that is created is known as subclass (child or derived class) and the existing class from where the child class is derived is known
+   as superclass (parent or base class).
+
+-> Inheritance represents the IS-A relationship which is also known as a parent-child relationship.
+
+-> The extends keyword is used to perform inheritance in java.
+
+-> Syntax is:
+   
+   class Subclass-name  extends  Superclass-name {
+        // Methods and fields
+   }
+
+
+Types of Inheritance:
+---------------------
+1. Single Inheritance (one class inherit other class)
+2. Multilevel Inheritance (one class inherit other class and that other class inherit another class)
+3. Hierarchical Inheritance (many classes inherit one single class)
+4. Multiple Inheritance (one class inherit many classes)
+5. Hybrid Inheritance
+
+Note:- Multiple Inheritance is not supported by java
+
+Note:- The concept of Multiple Inheritance and hybrid inheritance are implemented by Interface in java.
+
+Note: In Inheritance we use extends keyword but in Interface we used implement keyword.
+
+
+Constructors in Inheritance:
+---------------------------
+-> While implementing inheritance in a Java program, every class has its own constructor.
+   Therefore the execution of the constructors starts after the object initialization.
+
+-> It follows a certain sequence according to the class hierarchy.
+
+Example:-            Order of Inheritance             
+                
+ (extends class B)   Class C  (Base Class 1)       C()    Class C's Constructor
+            
+ (extends class A)   Class B  (Base Class 1        B()    Class B's Constructor
+
+                     Class A  (Derived Class)      A()    Class A's Constructor
+
+
+Different Ways of order of execution:
+------------------------------------
+-> Order of execution of constructor in Single inheritance
+
+-> Order of execution of constructor in Multilevel inheritance
+
+-> Calling same class constructor using this keyword
+
+-> Calling superclass(parent class) constructor using super keyword
+
+
+Is-A relation:
+--------------
+-> The concept of IS-A is a totally based on Inheritance, which can be of two types Class Inheritance or Interface Inheritance.
+
+-> It is just like saying "A is a B type of thing." For example, Apple is a Fruit, Car is a Vehicle etc.
+
+-> Inheritance is uni-directional.
+
+-> For example, House is a Building. But Building is not a House.
+
+-> Wherever you see an extends keyword or implements keyword in a class declaration, then this class is said to have IS_A relationship.
+
+Has-A relation:
+---------------
+-> Aggregation is a term which is used to refer one way relationship between two objects. 
+   For example, Student class can have reference of Address class but vice versa does not make sense.
+
+-> Aggregation represents HAS-A relationship, which means when a class contains reference of another class known to have aggregation.
+
+-> The HAS-A relationship is based on usage, rather than inheritance. In other words, class A has-a relationship with class B, if
+   class A has a reference to an instance of class B.
+
+-> Composition(HAS-A) simply means the use of instance variables that are refrences to other objects.
+
+        Student
+           |
+         name
+           |
+         Address   --->  Address
+                            |
+                          house_no
+                            |
+                          locality
+
+
+
+instanceof:
+-----------
+-> The instanceof keyword checks whether an object is an instance of a specific class or an interface.
+
+-> The instanceof keyword compares the instance with type. The return value is either true or false.
+
+
+What is Method Over-riding?
+---------------------------
+-> Declaring a method in sub class which is already present in parent class is known as method overriding.
+
+-> Overriding is done so that a child class can give its own implementation to a method which is already provided by the parent class.
+
+-> In this case the method in parent class is called overridden method and the method in child class is called overriding method.
+
+
+Rules for method Over-riding:
+-----------------------------
+-> Both the superclass and the subclass must have the same method name, the same return type and the same parameter list.
+
+-> We cannot override the method declared as final and static.
+
+-> We should always override abstract methods of the superclass.
+
+Abstract class: is a restricted class that cannot be used to create objects(to access it, it must be inherited from another class).
+
+Abstract method: can only be used in an abstract class, and it does not have a body. The body provided by the subclass(inherited from).
+
+
+super keyword:
+--------------
+-> The super keyword in java is used in subclasses to access superclass members(attributes, constructors and methods).
+
+Uses:
+
+-> To call methods of the superclass that is overridden in the subclass.
+
+-> To access attributes (fields) of the superclass if both superclass and subclass have attributes with the same name.
+
+-> To explicitly call superclass no-argument (default) or parameterized constructor from the subclass constructor.
+
+
+final keyword:
+--------------
+-> The final keyword is used to denote constants. It can be used with variables, methods, and classes.
+
+-> Once any entity (variable, method or class) is declared final, it can be assigned only once.
+
+-> The final variable cannot be reinitialized with another value.
+
+-> The final method cannot be overridden.
+
+-> The final class cannot be extended.
+
+
+Polymorphism:
+-------------
+-> Polymorphism is an important concept of object-oriented programming. It simply means more than one form.
+
+-> That is, the same entity(method or operator or object) can perform different operations in different scenarios.
+   
+Compile Time Polymorphism
+--------------------------
+-> Function Overloading
+
+-> Operator Overloading
+
+Runtime Polymorphism
+---------------------
+-> Virtual Function
+
+-> Pure Virtual Function
+
+
+Virtual Functions:
+------------------
+-> A virtual function or virtual methods in an OOP language is a function or method used to override the behaviour
+   of the function in an inherited class with the same signature to achieve the polymorphism.
+
+-> Virtual function in Java is expected to be defined in the derived class. We can call the virtual function by 
+   referring to the object of the derived class using the reference or pointer of the base class.
+
+
+Abstraction:
+------------
+-> Data abstraction is the process of hiding certain details and showing only essential information to the user.
+
+-> The trivial or the non-essential units are not displayed to the user.
+
+-> Data Abstraction may also be defined as the process of identifying only the required characteristics of an object 
+   ignoring the irrelevant details.
+
+
+When to use abstract class:
+---------------------------
+-> There are situations in which we will want to define a superclass that declares the structure of a given abstraction
+   without providing a complete implementation of every method. Sometimes we will want to create a superclass that only
+   defines a generalization from that will be shared by all of its subclasses, leaving it to each subclass to fill in the 
+   details.
+
+
+Key Points to Remember:
+-----------------------
+-> We use the abstract keyword to create abstract classes and methods.
+
+-> An abstract method does not have any implementation (method body).
+
+-> A class containing abstract methods should also be abstract.
+
+-> We cannot create objects of an abstract class. 
+
+-> To implement features of an abstract class, we inherit subclasses from it and create objects of the subclass.
+
+-> A subclass must override all abstract methods of an abstract class. However, if the subclasses declared abstract
+   and its not mandatory to override abstract methods.
+
+-> We can access the static attributes and methods of an abstract class using the reference.
+
+
+What is Interface?
+-----------------
+-> An interface is a fully abstract class. It includes a group of abstract methods(methods without a body).
+
+-> We use the interface keyword to create an interface in Java.
+
+-> To use an interface, other classes must implement it. We use the implements keyword to
+   implement an interface.
+
+
+Difference bw Interface and Class
+---------------------------------
+class:-
+------
+1. The keyword used to create a class is "class"
+
+2. A class can be instantiated i.e, objects of a class can be created.
+
+3. Classes does not support multiple inheritance.
+
+4. It can inherit another class.
+
+5. It can be inherited by another class using the keyword 'extends'.
+
+6. It can contain constructors.
+
+7. It cannot contain abstract methods.
+
+8. Variables and methods in a class can be declared using any access specifier(private, public, default, protected)
+
+9. Variables in a class can be static, final or neither.
+
+Interface:-
+----------
+1. The keyword used to create an interface is "interface"
+
+2. An Interface cannot be instantiated i.e, objects cannot be created.
+
+3. Interface supports multiple inheritance.
+
+4. It cannot inherit a class.
+
+5. It can be inherited by a class by using the keyword 'implements' and it can be inherited by an interface using
+   the keyword 'extends'.
+
+6. It cannot contain constructors.
+
+7. It contains abstract methods only.
+
+8. All variables and methods in a interface are declared public.
+
+9. All variables are static and final.
+
+
+File Handling
+--------------
+=> Stream:Input Stream and Output Stream
+--------------------------------------
+
+-> Streams are the sequence of data that are read from the source and written to the destination
+
+-> An input stream is used to read data from the source. And, an output stream is used to write data
+   to the destination.
+
+       Reading data from source
+
+           Source ----------> Program
+                  input stream
+
+
+       Writing data to destination
+         
+           Program ----------> Destination
+                   output stream
+
+
+=> Byte Stream: FileInputStream and FileOutputStream
+--------------------------------------------------
+InputStream Class:
+------------------
+-> The InputStream class of the java.io package is an abstract superclass that represent an input stream of bytes.
+
+-> Since InputStream is an abstract class, it is not useful by itself. However, its subclasses can be used to read
+   data.
+
+-> In order to use the functionality of InputStream, We can use its subclasses. 
+   Some of them are:
+   1. FileInputStream
+   2. ByteArrayInputStream
+   3. ObjectInputStream
+ 
+               InputStream
+                    ^
+                    |  extends
+                    |
+               FileInputStream
+
+
+OutputStream Class:
+-------------------
+-> The OutputStream class of the java.io package is an abstract superclass that represents an output stream of bytes.
+
+-> Since OutputStream is an abstract class, it is not useful by itself. However, its subclasses can be used to write data.
+
+-> In order to use the functionality of OutputStream, we can use its subclasses. 
+   Some of them are:
+   1. FileOutputStream
+   2. ByteArrayOutputStream
+   3. ObjectOutputStream
+
+          Writer
+            ^
+            |
+            | extends
+            |
+          OutputStreamWriter
+
+
+InputStream
+-----------
+1. BufferedInputStream : This class provides methods to read bytes from the buffer.
+2. ByteArrayInputStream : This class provides methods to read bytes from the byte array.
+3. DataInputStream : This class provides methods to read Java primitive data types.
+4. FileInputStream : This class provides methods to read bytes from a file.
+5. FilterInputStream : This class contains methods to read bytes from the other input streams, 
+                       which are used as the primary source of data.
+6. ObjectInputStream : This class provides methods to read objects.
+7. PipedInputStream : This class provides methods to read from a piped output stream to which 
+                      piped input stream must be connected.
+8. SequenceInputStream: This class provides methods to connect multiple Input Stream and reads from them.
+                        
+
+Difference b/w FileInputStream and BufferedInputStream
+------------------------------------------------------
+When to Use:
+-> Use FileInputStream when reading small files or when the overhead of buffering isn't needed.
+
+-> Use BufferedInputStream for larger files or when performance is critical, as it reduces the number of I/O operations by using an internal buffer.
+
+
+OutputStream
+-------------
+1. BufferedOutputStream : This class provides methods to write the bytes to the buffer.
+
+2. ByteArrayOutputStream : This class provides methods to write bytes to the byte array.
+
+3. DataOutputStream : This class provides methods to write the java primitive data types.
+
+4. FileOutputStream : This class provides methods to write bytes to a file.
+
+5. FilterOutputStream : This class provides methods to write to other output streams.
+
+6. ObjectOutputStream : This class provides methods to write objects.
+
+7. PipedOutputStream : It provides methods to write bytes to a piped output stream.
+
+8. PrintStream : It provides methods to print Java primitive data types.
+
+
+=> Character Stream: File Reader and File Writer
+-------------------------------------------------
+Reader Class :-
+------------
+-> the Reader class is an abstract class that defines a character stream for reading text data. It is part of the java.io package
+   and serves as the superclass for all classes that read character-based data.
+
+-> It is designed for handling character input streams rather than byte input streams (which are handled by the InputStream class).
+
+InputStream
+-----------
+1. BufferedReader : This class provides methods to read characters from the buffer.
+
+2. CharArrayReader : This class provides methods to read characters from the char array.
+
+3. FileReader : This class provides methods to read characters from the file.
+
+4. FilterReader : This class provides methods to read characters from the underlying character input stream.
+
+5. InputStreamReader : This class provides methods to convert bytes to characters.
+
+6. PipedReader : This class provides methods to read characters from the connected piped outputstream.
+
+7. StringReader : This class provides methods to read characters from a string.
+
+Writer Class:-
+-------------
+-> the Writer class is an abstract class that provides methods for writing character streams. It is part of the java.io package.
+
+-> The Writer class is designed for handling the output of characters (as opposed to bytes, which are handled by the OutputStream class).
+
+OutputStream
+-------------
+1. BufferedWriter : This class provides methods to write characters to the buffer.
+
+2. FileWriter : This class provides methods to write characters to the file.
+
+3. CharArrayWriter : This class provides methods to write the characters to the
+                     character array.
+
+4. OutputStreamWriter : This class provides methods to convert from bytes to characters.
+
+5. PipedWriter : This class provides methods to write the characters to the piped output stream.
+
+6. StringWriter : This class provides methods to write the charaters to the string.
+
+
+=> Standard Stream: Standard Input, Output, and Error
+-------------------------------------------------------
+Java Input Output Streams:
+--------------------------
+-> Java brings various Streams with its I/O package that helps the user to perform all the input-output operations.
+
+-> These streams support all the types of objects, data-types, characters, files etc. to fully execute the I/O
+   operations.
+
+                 InputStream                     OutputStream
+          source ------------>  Java Application -------------> Destination
+                   READ                            Write
+
+
+-> System.in :- 
+        This is the standard input stream that is used to read characters from the keyboard or any other standard input
+        device.
+
+-> System.out :-
+        This is the standard output stream that is used to produce the result of a program on an output device like the 
+        computer screen.
+
+-> System.err :-
+         This is the standard error stream that is used to output all the error data that a program might throw, on a 
+         computer screen or any standard output device.
+
+
+Nesting of Classes
+------------------
+Nested Class: 
+  -> In java, you can define a class within another class. Such class is known as nested class.
+
+  -> The class written within is called the nested class, and the class that holds the inner class is 
+     called the outer class.
+
+syntax:-    class Outer{
+                class Inner {
+                }
+            }
+
+
+key points:-
+
+-> They enable you to logically group classes that are only used in one place, thus this increases the use of encapsulation,
+   and creates more readable and maintainable code.
+
+-> The scope of a nested class is bounded by the scope of its enclosing class.
+
+-> A nested class has access to the members, including private members, of the class in which it is nested. The reverse
+   is also true i.e, the enclosing class can access the members of the nested class.
+
+-> A nested class is also a member of its enclosing class.
+
+-> As a member of its enclosing class, a nested class can be declared private, public, protected or package private(default).
+
+
+Nested Class Division:
+----------------------
+Nested classes are divided into two categories:
+-> Static nested class : Nested classes that are declared static are called static nested classes.
+
+-> Inner class : An inner class is a non-static nested class.
+
+
+                       Nested classes
+                             |
+                             | 
+            -------------------------------------
+            |                                   |
+            |                                   |   
+    Static nested classes                   Inner Class
+                                     (Non-static nested classes)
+                                                |
+                                                |
+                                        -------------------
+                                        |                  |
+                                Local classes         Anonymous classes
+
+
+
+Non-Static Nested Class:
+------------------------
+-> Non-static nested class (inner class)
+    -> Member inner class
+    -> Anonymous inner class
+    -> Local inner class
+
+
+Member Inner Class:
+------------------
+-> A non-static class that is created inside a class but outside a method is called member inner class. It is also known as
+   regular inner class. It can be declared with access modifiers like public, default, private, and protected.
+
+-> An object or instance of a member's inner class always exists within an object of its outer class. To instantiate Member Inner class.
+
+OuterClassreference.new InnerClassConstructor();
+
+-> The java compiler creates two class files in the case of the inner class. The class file name of the inner class is "Outer$Inner".
+   If you want to instantiate the inner class, you must have to create the instance of the outer class. In such a case, an instance
+   of inner class is created inside the instance of the outer class.
+
+Anonymous Inner Class:
+---------------------
+-> Java anonymous inner class is an inner class without a name and for which only a single object is created.
+
+-> An anonymous inner class is useful while making an instance of an object with overloading methods of a class
+   or interface, without creating subclass of a class.
+
+-> A class that has no name is known as an anonymous inner class in java. It should be used if you have to override a method of class or interface.
+
+ -> A class is created, but its name is decided by the compiler, which extends the abstract class and provides the implementation of the method.
+
+ -> An object of the Anonymous class is created that is referred to by 'p', a reference variable of abstract class type. 
+
+
+Local Inner class:
+------------------
+-> A class created inside a method, is called local inner class in java. which means the classes that are defined inside a block.
+
+-> If you want to invoke the methods of the local inner class, you must instantiate this class inside the method.
+
+-> Local inner class cannot be invoked from outside the method.
+
+
+
+Java Exceptions
+----------------
+What is an Exception?
+
+-> Exception is an unwanted or unexpected event, which occurs during the execution of a program, i.e. at run time, that disrupts the 
+   normal flow of the program's instructions.
+
+   In java, there are three types of exceptions:
+
+1. Checked exceptions : Checked exceptions are called compile-time exceptions because these exceptions are checked at
+                        compile-time by the compiler. 
+
+
+2. Unchecked exceptions : The unchecked exceptions are just opposite to the checked exceptions. The compiler will not 
+                          check these exceptions at compile time.
+
+3. Error : Error is irrecoverable. Some examples of error are
+           OutOfMemoryError, VirtualMachineError, AssertionError etc.
+
+
+
+Hierarchy of Java Exception classes
+------------------------------------
+-> The java.lang.Throwable class is the root class of Java Exception hierarchy inherited by two subclasses: Exception and Error. 
+
+   The hierarchy of Java Exception classes is given below:
+
+    Image: 
+    https://images.javatpoint.com/core/images/hierarchy-of-exception-handling.png
+
+
+Java Exception Keywords
+-----------------------
+-> try   : 
+    => The "try" keyword is used to specify a block where we should place an exception code. It means we can't use try block alone. 
+       The try block must be followed by either catch or finally.
+
+-> catch :
+    => The "catch" block is used to handle the exception. It must be preceded by try block which means we can't use catch block alone. 
+       It can be followed by finally block later.
+
+-> finally : 
+     => The "finally" block is used to execute the necessary code of the program. It is executed whether an exception is handled or not.
+
+-> throw : 
+    => The "throw" keyword is used to throw an exception.
+
+-> throws : 
+    => The "throws" keyword is used to declare exceptions. It specifies that there may occur an exception in the method. 
+       It doesn't throw an exception. It is always used with method signature.
+
+
+Unchecked Exceptions:
+---------------------
+-> This exceptions that happens due to a programming error are known as unchecked exceptions.
+
+-> These exceptions are not checked at compile-time but run-time. Some of the common runtime
+   exceptions are:
+
+   -> Improper use of an API - IllegalArgumentException
+   -> Null pointer access (missing the initialization of a variable) - NullPointerException
+   -> Out-of-bounds array access - ArrayIndexOutOfBoundsException
+   -> Dividing a number by 0 - ArithmeticException
+   -> You can think about it in this way. "If it is a runtime exception, it is your fault".
+
+-> The NullPointerException would not have occured if you had checked whether the variable was
+   initialized or not before using it.
+
+-> An ArrayIndexOutOfBoundsException would not have occured if you tested the array index against
+   the array bounds.
+
+
+Checked Exceptions:
+-------------------
+-> These are checked at compile time:
+
+             Types of Exceptions
+                    |
+                    |
+        ---------------------------
+        |                         |
+  User-Defined Exception    Built-in Exception
+                                   |
+                                   |
+                         ---------------------
+                         |                    |
+                 Checked Exceptions      Unchecked Exceptions
+
+                > ClassNotFoundException    > ArithmeticException
+                > InterruptedException      > ClassCastException
+                > IOException               > NullPointerException
+                > InstantiationException    > ArrayIndexOutOfBoundsException
+                > SQLException              > ArrayStoreException
+                > FileNotFoundException     > IllegalThreadStateException
+
+
+Throwable class in Java:
+------------------------
+-> The Throwable class is the superclass of every error and exception in the Java language.
+
+-> Only objects that are one of the subclasses of this class are thrown by any "Java Virtual Machine"
+   or may be thrown by the java throw statement.
+
+-> To check the exceptions during compile-time, Throwable and any subclass of Throwable which is not also a 
+   subclass of either Error or RuntimeException are considered as checked exceptions.
+
+ Exception Methods of Throwable Class
+--------------------------------------
+-> getMessage() : The getMessage() method of java Throwable class is used to get a detailed message of the Throwable.
+
+-> getSuppressed() : is used to return an array of all the Exceptions that were supressed to deliver this exception.
+
+-> getStackTrace() : is used to return an array of StackTraceElement given by PrintStackTrace() method.
+
+-> filllnStackTrace() : is used to fill in the execution stack trace.
+
+-> getLocalizedMessage() : It is used to get a localized (or locale-specific) description of the Throwable.
+
+-> initCause(): The initCause() method of java Throwable class is used to initialize the cause of the calling Throwable
+                with the specified cause.
+
+-> getCause() : it is used to fetch the cause of the Throwable or null if cause can't be determined.
+
+-> printStackTrace() : The printStackTrace() method of java Throwable class is used to print the Throwable with other details
+                       like classname and line number where the exception occurred.
+
+
+Multiple catch blocks:
+----------------------
+-> A try block can be followed by one or more catch blocks.
+
+-> Each catch block must contain a different exception handler.
+
+-> At a time only one exception occurs and at a time only one catch block is executed.
+
+-> All catch blocks must be ordered from most specific to most general, i.e catch for ArithmeticException must come before catch
+   for Exception.
+
+                     
+                             Execute try block     --------------------------------------
+                                    | > (Exception)                  (No Exception)  <  |
+                                    |                                                   |
+                             find appropriate catch                                     |
+                              block to execute                                          | 
+                                    |                                                   |
+                                    |                                                   |
+        -------------------------------------------------------------                   |
+        |                           |                               |                   |
+    Exception 1               Exception 2                      Exception n              |
+                                                                                        |
+  Execute catch block        Execute catch block              Execute catch block       |
+  for ExceptionType1         for ExceptionType2               for ExceptionTypen        |
+         |                          |                                |                  |
+         |                          |                                |                  |
+         |                          |                                |                  |
+         |                      Execute statement out   <-------------                  |
+         ------------------->   of try-catch block      <--------------------------------
+
+
+
+
+User Defined Exceptions:
+------------------------
+-> We can create our own exceptions that are derived classes of the Exception class.
+
+-> Creating our own Exception is known as custom exception or user-defined exception.
+
+-> Why use Custom Exceptions?
+    -> To catch and provide specific treatment to a subset of existing Java exceptions.
+    
+    -> Business logic exceptions: related to business logic and workflow, useful for the application users or the developers 
+       to understand the exact problem.
+
+-> In order to create custom exception, we need to extend Exception class that belongs to java.lang package.
+
+
+Finalize()  -> deprecated
+-----------
+-> finalize() is the method of Object class.
+
+-> This method is called just before an object is garbage collected.
+
+-> finalize() methods overrides to dispose system resources, perform clean-up activities and minimize memory leaks.
+
+-> Syntax is:
+       => protected void finalize() throws Throwable
+
+-> Finalization: Just before destroying any object, the garbage collector always calls finalize() method to perform clean-up activities
+   on that object. This process is known as Finalization in Java.
+
+-> Why finalize() method is used?
+     => finalize() method releases system resources before the garbage collector runs for a specific object.
+
+-> The Object class has a finalize() method, which is automatically called by GC before it attempts to remove
+   the object from the heap.
+
+-> In Java 9, the finalize() method has been deprecated. The finalization mechanism is inherently problematic
+   and can lead to performance issues, deadlocks, and hangs.
+
+-> The "java.lang.ref.Cleaner" and "java.lang.ref.PhantomReference" provide more flexible and efficient ways to 
+   release resources.
+
+
+Java Regex
+-----------
+-> A regular expression is a sequence of characters that forms a search pattern. When you search for data in a text, you can use this search
+   pattern to describe what you are searching for.
+
+-> A regular expression can be a single character, or a more complicated pattern.
+
+-> Regular expressions can be used to perform all types of text search and text replace operations.
+
+-> Email validation and passwords are a few areas of strings where Regex is widely used to define
+   the constraints.
+
+-> Regular Expressions are provided under java.util.regex package.
+
+-> This consists of 3 classes and 1 interface.
+
+=> The Matcher and Pattern classes provide the facility of Java regular expression. The java.util.regex package provides following classes
+   and interfaces for regular expressions.
+
+   1. MatchResult interface
+   2. Matcher class
+   3. Pattern class
+   4. PatternSyntaxException class
+
+
+Pattern class:
+--------------
+-> It is the compiled version of a regular expression. It is used to define a pattern for the regex engine.
+
+static Pattern              compiles the given regex and returns the instance of the Pattern.
+compile(String regex)
+
+Matcher matcher             creates a matcher that matches the given input with the pattern.
+(CharSequenceinput)
+
+static boolean              It works as the combination of compile and matcher methods.
+matches(String regex,       It compiles the regular expression and matches the given inputs with the pattern.
+CharSequence input)
+
+String[]                    splits the given input string around matches of given pattern.
+split(CharSequence input)
+
+String pattern()            returns the regex pattern.
+
+
+Matcher class:
+--------------
+-> It implements the MatchResult interface. It is a regex engine which is used to perform match operations on a 
+   character sequence.
+
+boolean matches()     test whether the regular expression matches the pattern.
+
+boolean find()        finds the next expression that matches the pattern.
+
+boolean find(int start)  finds the next expression that matches the pattern from the given start number.
+
+String group()  returns the matched subsequence.
+
+int start()     returns the ending index of the matched subsequence.
+
+int groupCount()  returns the total number of the matched subsequence. 
+
+
+Quantifiers and Metacharacters:
+-------------------------------
+-> To specify the number of occurrences while constructing a regular expression you can use quantifiers.
+
+-> Java supports three types of quantifiers namely:
+
+   -> Greedy quantifiers: Greedy quantifiers are the default quantifiers. A greedy quantifier matches as much as possible from the input
+                          string(longest match possible) if match not occured it leaves the last character and matches again.
+ 
+   -> Reluctant quantifiers: This quantifier uses the approach that is opposite of greedy quantifiers. It starts with the first charcater
+                             and processes one character at a time. (Appending a ? as a quantifier)
+
+   -> Possessive quantfiers: This quantifier matches as many characters as possible, like a greedy quantifier. But if the entire string does
+                             not watch, then it does not try removing characters.
+
+
+Metacharacters:
+---------------
+-> Metacharacters are like short-codes for common
+
+matching patterns.
+
+     Regular Expression                Description
+
+         \d                         Any digits, short-code for [0-9]
+         \D                         Any non-digits, short-code for [^0-9]
+         \s                         Any white space character, short-code for [\t\n\x0B\f\r]
+         \S                         Any non-whitespace character
+         \w                         Any word character, short-code for [a-zA-Z_0-9]
+         \W                         Any non-word character
+         \b                         Represents a word boundary
+         \B                         Represents a non-word boundary
+
+
+Date and Time :
+--------------
+-> Java provides the Date class available in java.util package, this class encapsulates the current date and time.
+
+-> The Date class supports two constructors
+
+   -> Date(): This constructor initializes the object with the current date and time.
+   -> Date(long millisec): This constructor accepts an argument that equals the number of milliseconds that have elapsed
+                           since midnight, January 1, 1970.
+
+Date Formatting:
+---------------
+-> GregorianCalendar is a concrete implementation of a Calendar class that implements the normal Gregorian calendar.
+
+-> The getInstance() method of Calendar returns a GregorianCalendar initialized with the current date and time in the default
+   locale and time zone. GregorianCalendar defines two fields: AD and BC. These represent the two eras defined by the Gregorian
+   calendar.
+
+Package:
+--------
+-> A mechanism to encapsulate a group of classes, sub packages and interfaces. Packages are used for:
+   -> Preventing naming conflicts.
+   -> Making searching/locating and usage of classes, interfaces, enumerations and annotations easier
+   -> Providing controlled access: protected and default have package level access control. A protected
+      member is accessible by classes in the same package and its subclasses. A default member (without
+      any access specifier) is accessible by classes in the same package only.
+   -> Packages can be considered as data encapsulation (or data-hiding).
+
+
+-> Packages are divided into two categories:
+   -> Built-in packages (packages from the Java API)
+   -> User-defined packages (create your own packages)
+
+
+Example of Built-in packages
+ -> java.lang
+ -> java.util
+ -> java.io
+ -> java.applet
+ -> java.awt
+ -> java.net
+ -> java.sql
+
+
+MultiThreading
+---------------
+-> Multithreading is a process of executing multiple threads simultaneously, enabling concurrent execution within a program. It allows for 
+   efficient utilization of the CPU, as threads can run independently and handle multiple tasks at once.
+
+-> A thread is a lightweight sub-process, the smallest unit of processing.
+
+Key Concepts:-
+-------------
+-> Thread: A thread is a lightweight sub-process, representing the smallest unit of processing in Java. Each thread runs independently but 
+           shares the same process resources, like memory.
+
+-> Process vs. Thread: A process is a program in execution with its own memory space, while a thread is a subset of a process that can run 
+                       independently within the process's memory.
+
+Creating Thread in Java
+------------------------
+->1. Using the "Runnable" Interface
+->2. Extending the "Thread" Class
+
+Using the Runnable Interface
+-----------------------------
+-> Implement the Runnable interface and define the run() method where the thread’s code resides.
+
+-> This approach allows a class to inherit from another class, as Java allows only single inheritance.
+
+Example:- 
+            class MyThread implements Runnable {
+              @Override
+              public void run() {
+              // Code to execute in the thread
+              }
+            }
+
+-> To Start the Thread: Create an instance of Thread, passing the Runnable implementation, and call start().
+
+           MyThread myRunnable = new MyThread();
+           Thread thread = new Thread(myRunnable);
+           thread.start();
+
+
+Extending the "Thread" Class
+-----------------------------
+-> Extend the Thread class and override its run() method.
+
+-> In this approach, the class cannot extend any other class due to Java’s single inheritance rule.
+
+Example:-
+           class MyThread extends Thread {
+              @Override
+              public void run() {
+             // Code to execute in the thread
+             }
+          }
+
+-> To Start the Thread: Create an instance of your class and call start().
+
+         MyThread thread = new MyThread();
+         thread.start();
+
+
+Choosing Between Runnable and Thread
+-------------------------------------
+-> Implements Runnable: Preferred when the class already inherits from another class or if you want to separate the task from the thread management.
+
+-> Extends Thread: Useful if you only need to create a simple thread without needing inheritance from another class.
+
+
+Example Using a Custom Class MyThread
+--------------------------------------
+1. Implementing Runnable:
+
+    example:
+                 class MyThread implements Runnable {
+                     @Override
+                     public void run() {
+                        System.out.println("Thread is running via Runnable");
+                     }
+                 }
+
+                public class Test {
+                  public static void main(String[] args) {
+                  MyThread myThread = new MyThread();
+                  Thread thread = new Thread(myThread);
+                  thread.start();
+                  }
+               }
+
+
+2. Extending Thread:
+ 
+    example:   
+                class MyThread extends Thread {
+                   @Override 
+                   public void run() {
+                   System.out.println("Thread is running via Thread class");
+                   }
+               }
+
+               public class Test {
+                 public static void main(String[] args) {
+                 MyThread thread = new MyThread();
+                 thread.start();
+                 }
+              }
+
+
+Important Methods in Thread Class
+----------------------------------
+1. start(): Initiates the thread and calls the run() method.
+2. run(): Contains the code executed by the thread.
+3. sleep(long milliseconds): Pauses the thread for the specified time.
+4. join(): Waits for a thread to die, allowing one thread to complete before another starts.
+5. yield(): Pauses the currently executing thread to allow other threads a chance to execute.
+6. setPriority(int priority): Sets the thread’s priority.
+
+
+
+Advantages of Multithreading
+-----------------------------
+-> Enhanced Performance: Enables concurrent execution, improving program responsiveness and resource utilization.
+
+-> Efficient Resource Utilization: Threads share the same memory and resources, reducing overhead.
+
+-> Reduced Blocking: Allows tasks to run independently, minimizing the likelihood of blocking.
+
+Disadvantages of Multithreading
+--------------------------------
+-> Complexity: Increased complexity in designing and debugging multithreaded programs.
+
+-> Concurrency Issues: Requires careful synchronization to avoid issues like deadlock, race conditions, and starvation.
+
+-> Resource Contention: Multiple threads competing for CPU time can lead to inefficiency.
+
+
+
+Life Cycle of Thread
+---------------------
+
+               New
+                |
+    start()     |
+        --------|             sleep() done, i/o complete,
+        |      Runnable       lock available, resume(),
+        |       |             notify() or notifyAll()                  Non Runnable
+active  |       |                                                        (Blocked)
+        |       |
+        |      Running
+        --------|             sleep(), block on i/o, wait
+ run() method   |             for lock, suspend(), wait()
+  exits or      |
+   stop()    Terminated
+
+
+Note:- The java.lang package includes all the classes related to threading, and it is imported by default.
+
+
+Thread Operations
+------------------
+-> Thread class provides methods to perform operations with threads.
+
+-> This thread class is present in java.lang package. So we don't need to import this package.
+
+-> Some important thread methods
+
+-> public string getName() - returns the name of thread
+
+-> public void setName(String name) - set the name of thread.
+
+-> public void run() - contain the task of thread
+
+-> public void start() - start thread by allocating resources.
+
+-> public long getId() - returns the id of thread
+
+-> setPriority(p), getPriority() - set and get the priority
+
+-> sleep(),join(),interrupt(), resume(), stop() ...etc
+
+
+Daemon Thread
+--------------
+-> Daemon thread in java is a service provider thread that provides services to the user thread.
+
+-> setDaemon(Boolean)
+
+-> public Boolean isDaemon()
+
+-> Garbage collector is best example of Daemon thread
+
+=> a daemon thread is a special type of thread that provides background support to other non-daemon (user) threads. 
+Here are some key points to help you understand the concept of daemon threads:
+
+1. Definition of Daemon Thread
+-------------------------------
+-> A daemon thread is a background thread that is designed to run in the background to support other threads.
+
+-> It typically provides general services like garbage collection, signal handling, or resource management.
+
+-> Daemon threads do not prevent the JVM from exiting once all user threads (non-daemon threads) are completed.
+
+
+2. Characteristics of Daemon Threads
+------------------------------------
+-> Low Priority: Daemon threads usually have a lower priority than user threads.
+
+-> Lifecycle Bound to User Threads: Daemon threads are terminated by the JVM automatically once all user threads have completed.
+
+-> Background Tasks: Daemon threads are typically used for tasks that should continue running as long as the application is running but don’t need to finish once user threads are complete.
+
+-> No Guarantee of Execution: Daemon threads may not complete their tasks before the JVM terminates, which means they may be terminated prematurely if all user threads exit.
+
+
+3. Examples of Daemon Threads
+------------------------------
+-> The Java garbage collector (Garbage Collector) is a typical example of a daemon thread.
+
+-> Timer and Scheduler tasks are also often implemented as daemon threads, which execute tasks at specific intervals in the background.
+
+
+4. Creating Daemon Threads
+--------------------------
+-> Any thread in Java can be marked as a daemon by calling the setDaemon(true) method on a Thread object before it is started.
+
+-> Once started, you cannot change the daemon status of a thread.
+
+Example:-   Thread daemonThread = new Thread(new Runnable() {
+               public void run() {
+                  while (true) {
+                     System.out.println("Daemon thread running...");
+                 }
+              }
+          });
+
+         daemonThread.setDaemon(true); // Marking the thread as daemon
+         daemonThread.start();          // Starting the daemon thread
+
+
+
+5. Checking Daemon Status
+-------------------------
+-> You can check if a thread is a daemon thread by using the isDaemon() method:
+
+Example:-   if (daemonThread.isDaemon()) {
+               System.out.println("This is a daemon thread.");
+            } else {
+               System.out.println("This is a user thread.");
+            }
+
+6. Daemon vs. User Threads
+--------------------------
+-> User Threads: Perform the main work of the application, and the JVM waits for all user threads to complete before shutting down.
+
+-> Daemon Threads: Provide support services, and the JVM does not wait for daemon threads to finish their tasks. 
+                   If all user threads are complete, the JVM terminates, killing any remaining daemon threads.
+
+
+
+7. When to Use Daemon Threads
+------------------------------
+-> Use daemon threads for tasks that don’t require completion, like background logging, monitoring services, or resource cleanup.
+
+-> Avoid using daemon threads for tasks where the completion of the task is critical, as they may not finish executing if the JVM shuts down.
+
+
+8. Example of Daemon Thread Behavior
+------------------------------------
+
+     public class DaemonThreadExample {
+        public static void main(String[] args) {
+           Thread daemonThread = new Thread(() -> {
+               while (true) {
+                   System.out.println("Daemon thread is running...");
+               try {
+                   Thread.sleep(1000);
+               } catch (InterruptedException e) {
+                    e.printStackTrace();
+               }
+            }
+        });
+
+        daemonThread.setDaemon(true); // Setting the thread as daemon
+        daemonThread.start();
+
+        System.out.println("Main thread ending...");
+        // Once the main (user) thread ends, JVM will terminate, killing the daemon thread as well
+    }
+  }
+
+
+Output Explanation:-
+The "Daemon thread is running..." message may print a few times.
+However, since the main thread finishes almost immediately, the JVM will terminate, causing the daemon thread to stop as well.
+
+In this example, the daemon thread is abruptly stopped when the main thread completes, illustrating that daemon threads do not prevent the 
+JVM from shutting down.
+
+
+
+Producer Consumer Problem...
+Synchronized, Inter-thread communications
+
+   Producer...thread        
+                          synchronized
+                             |                                              
+                          Produce_item()
+
+                          Consume_item()
+                                                 
+                                                Consumer...thread
+
+
+
+Collection
+-----------
+-> Any group of individual objects which are represented as a single unit is known as the collection of the objects.
+
+Example : Collection of books
+
+          books -> collection of books -> one book is known a single object.
+                          |
+                          |
+                   and collection of books 
+                      known collection
+
+
+
+Framework
+-----------
+-> A framework is a set of classes and interfaces which provide a ready-made architecture.
+
+Collection Framework
+---------------------
+-> Collection Framework is java API which provides architecture to store and manipulate group of objects.
+
+         API --> classes and interfaces  --> store and manipulate --> group of objects
+
+
+ -> all this in java.util package
+
+ -> predefined classes of collection framework
+    Collection, Map, Set, List, Queue   Etc..
+
+ implementation...
+ and class work on which algo..
+ and these classes internally follow dsa
+
+
+=> collection itself a interface
+
+Collection Hierarchy
+--------------------
+                              Iterable (for-each)1
+                                 |
+  forward                        |
+ Iterator(2) ---- Has a --------> Collection ->   methods
+    |                            |         it represents a group of objects as single unit
+    |                            |
+ ListIterator(3)    -----------------------------------------------------
+  Backward       |                                                   |
+                List                                                Set
+                 |                                                   |
+       ----------------------- Enumeration(4)                               -------------------
+       |         |           |                                |                  |
+   ArrayList  LinkedList   Vector ---> these are classes    HashSet           SortedSet
+                             |------------                     |                  |
+   Dynamic  doublyLinked   Dynamic       |                  LinkedHashSet      TreeSet (BST)
+   Array    List           Array       Stack
+                                                            order Preserved     sorted
+  non-thread               thread safe                                          asc num, string           
+  safe class               class                                                Custome Logic
+
+
+-> collection comes in java version 1.2 and vector is at java version 1.0 and java is backward compatible so array list and vector both are in java.
+
+-> list and set both are interface
+List
+ -> Indexed collection [0,1,2..]
+ -> order is preserved
+ -> duplicates are allowed 
+
+Set 
+ -> not indexed collection
+ -> order is not preserved
+ -> duplicates are not allowed
+
+
+Map Hierarchy
+--------------
+
+  Key    Value   ---------> SET             -> duplicate keys are not allowed
+  ram  ->  1312414                          -> order of keys are not preserved
+  ankita -> 35252525
+  swati ->  24124214               MAP
+    |         |                     |
+  Object    Object     ---------------------------
+                       |                          |
+                    HashMap                    SortedMap
+                       |                          |
+                   LinkedinHashMap              TreeMap    ----> keywise sorting
+                  -> keyworder preserve
+                     duplicates are not allowed
+
+
+
+Creating Collection
+--------------------
+1) Type Safe :-  same type of elements(objects) are added to collection
+Example:
+      ArrayList<String> names = new ArrayList<String>
+
+2) UnType Safe :-   different type of elements can be added to collection
+Example:
+       LinkedList list = new LinkedList();   
+
+
+Imp topic: Comparable and Comparator (for custom sorting Logic)      
+
+
+
